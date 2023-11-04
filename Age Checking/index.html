@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Comparison Operators</h1>
+
+    <form onsubmit="AgeChecker(event)">
+        Enter Your Age: <input id="AgeInput" type="number" required step="0.01">
+        <button>Submit</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script>
+       
+        function AgeChecker(event) {
+
+            event.preventDefault();
+            let AgeInput= document.querySelector("#AgeInput").value;
+            AgeInput= Number(AgeInput);
+            console.log(AgeInput); 
+
+            let message = "";
+           
+            if (AgeInput<=10){
+                message= "You are Kid"
+
+            }
+            else if(AgeInput<=30)
+            {
+                message = "You are Young"
+            }
+            else if (AgeInput>30)
+            {
+            message = "You are Old"
+            }
+
+          document.querySelector("#resultWindow").innerHTML = message
+
+        }
+    </script>
+</body>
+</html>
